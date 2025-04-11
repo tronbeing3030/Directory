@@ -1,16 +1,16 @@
 console.log("Works!");
 
 const imgs = document.querySelector('.imgs');
+const company = document.querySelector('main');
 
 let a = [];
 
 fetch('./small_business_directory.json') 
   .then(response => response.json())
   .then(data => {
-    console.log(data);
     
     for(i = 0; i<10; i++){
-        const comps = document.createElement('a');
+        const comps = document.createElement('div');
         const title = document.createElement('h1');
         const ratings = document.createElement('p');
         const description = document.createElement('p');
@@ -30,19 +30,58 @@ fetch('./small_business_directory.json')
         comps.appendChild(description);
         imgs.appendChild(comps);
         comps.style.backgroundImage = `url(${data[i].contact.image_url})`;
-        comps.href = './company.html';
-}
+        comps.addEventListener('click', (i) => {
+          console.log(i);
+          const contact = document.createElement('p');
+          contact.innerHTML = data[i].contact.email;
+          comps.appendChild(contact);
+        });
+  }
   })
   .catch(error => {
     console.error('Error loading JSON:', error);
   });
 
-//   document.addEventListener('DOMContentLoaded', () => {
-//     const parentElement = document.getElementById('parent');
-//     const childElement = document.createElement('div');
-//     childElement.textContent = 'I am a child element!';
-//     parentElement.appendChild(childElement);
-//   });
+  function displayBusinesses(list) {
+    imgs.innerHTML = '';
+    list.forEach(business => {
+      const comps = document.createElement('div');
+      comps.className = "inner";
+      comps.style.backgroundImage = `url(${business.contact.image_url})`;
+  
+      comps.innerHTML = `
+        <h1>${business.name}</h1>
+        <p>${business.rating} Stars</p>
+        <p>${business.description}</p>
+        <p>${business.category}</p>
+      `;
+  
+      imgs.appendChild(comps);
+    });
+  }
+  
+  // Filter logic
+  document.getElementById('searchInput').addEventListener('input', filterBusinesses);
+  document.getElementById('categoryFilter').addEventListener('change', filterBusinesses);
+  document.getElementById('ratingFilter').addEventListener('change', filterBusinesses);
+  
+  function filterBusinesses() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const selectedCategory = document.getElementById('categoryFilter').value;
+    const selectedRating = parseInt(document.getElementById('ratingFilter').value) || 0;
+  
+    const filtered = businesses.filter(b => {
+      return (
+        (b.name.toLowerCase().includes(searchTerm) || b.description.toLowerCase().includes(searchTerm)) &&
+        (selectedCategory === '' || b.category === selectedCategory) &&
+        (isNaN(selectedRating) || b.rating >= selectedRating)
+      );
+    });
+
+
+  
+    displayBusinesses(filtered);
+  }  
 
 
 
