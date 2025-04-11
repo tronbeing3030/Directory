@@ -1,0 +1,140 @@
+[
+  {
+    "name": "The Cozy Cup Cafe",
+    "category": "Cafe",
+    "description": "A warm, rustic coffee shop serving locally roasted brews and fresh pastries.",
+    "location": "Asheville, NC",
+    "latitude": 35.5951,
+    "longitude": -82.5515,
+    "rating": 4.8,
+    "contact": {
+      "email": "hello@cozycup.com",
+      "phone": "828-555-0198",
+    "image_url":"https://images.unsplash.com/photo-1556742393-d75f468bfcb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "name": "Whimsy Works",
+    "category": "Handmade Crafts",
+    "description": "A boutique offering handmade jewelry, ceramics, and gifts from local artisans.",
+    "location": "Portland, OR",
+    "latitude": 45.5122,
+    "longitude": -122.6587,
+    "rating": 4.7,
+    "contact": {
+      "email": "contact@whimsyworks.art",
+      "phone": "503-555-0421",
+    "image_url":"https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "name": "Bound & Found Books",
+    "category": "Bookstore",
+    "description": "Independent bookstore with a curated selection of indie authors and local literature.",
+    "location": "Madison, WI",
+    "latitude": 43.0731,
+    "longitude": -89.4012,
+    "rating": 4.9,
+    "contact": {
+      "email": "info@boundfoundbooks.com",
+      "phone": "608-555-1320",
+    "image_url":"https://images.unsplash.com/photo-1509291985095-788b32582a81?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  }
+  },
+  {
+    "name": "Little Lantern Tea House",
+    "category": "Cafe",
+    "description": "Charming tea house serving organic teas and Asian-inspired pastries.",
+    "location": "Boulder, CO",
+    "latitude": 40.015,
+    "longitude": -105.2705,
+    "rating": 4.6,
+    "contact": {
+      "email": "tea@littlelantern.com",
+      "phone": "303-555-0912",
+    "image_url":"https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "name": "Craft & Canvas",
+    "category": "Handmade Crafts",
+    "description": "Workshops and handmade art from local painters and crafters.",
+    "location": "Santa Fe, NM",
+    "latitude": 35.687,
+    "longitude": -105.9378,
+    "rating": 4.5,
+    "contact": {
+      "email": "hello@craftcanvas.com",
+      "phone": "505-555-3382",
+    "image_url":"https://images.unsplash.com/photo-1609446154807-d56805f0e007?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+  },
+  {
+    "name": "Stacks & Stories",
+    "category": "Bookstore",
+    "description": "A literary hub for readers, writers, and coffee lovers alike.",
+    "location": "Savannah, GA",
+    "latitude": 32.0809,
+    "longitude": -81.0912,
+    "rating": 4.7,
+    "contact": {
+      "email": "stories@stackedbooks.net",
+      "phone": "912-555-7611",
+    "image_url":"https://images.unsplash.com/photo-1623771702313-39dc4f71d275?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "name": "Bean & Blossom",
+    "category": "Cafe",
+    "description": "Garden-themed caf\u00e9 with seasonal brunch menu and house-roasted beans.",
+    "location": "Eugene, OR",
+    "latitude": 44.0521,
+    "longitude": -123.0868,
+    "rating": 4.9,
+    "contact": {
+      "email": "blossom@beanblossom.com",
+      "phone": "541-555-8843",
+    "image_url":"https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "name": "Woven Roots Collective",
+    "category": "Handmade Crafts",
+    "description": "Sustainable, ethical handmade goods created by indigenous artisans.",
+    "location": "Flagstaff, AZ",
+    "latitude": 35.1983,
+    "longitude": -111.6513,
+    "rating": 5.0,
+    "contact": {
+      "email": "support@wovenroots.co",
+      "phone": "928-555-1933",
+    "image_url":"https://images.unsplash.com/photo-1635254720645-32746e3279c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "name": "The Inked Leaf",
+    "category": "Bookstore",
+    "description": "Used & rare bookstore nestled in a quiet downtown corner.",
+    "location": "Burlington, VT",
+    "latitude": 44.4759,
+    "longitude": -73.2121,
+    "rating": 4.8,
+    "contact": {
+      "email": "inked@leafbooks.org",
+      "phone": "802-555-3309",
+    "image_url":"https://images.unsplash.com/photo-1576479854195-52883a461a68?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "name": "Sunbeam Studio",
+    "category": "Handmade Crafts",
+    "description": "Light-filled gallery and studio space for pottery and weaving workshops.",
+    "location": "Sedona, AZ",
+    "latitude": 34.8697,
+    "longitude": -111.7609,
+    "rating": 4.9,
+    "contact": {
+      "email": "studio@sunbeamart.org",
+      "phone": "928-555-0422",
+    "image_url": "https://images.unsplash.com/photo-1591622778887-83445831b63d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"   
+  }
+  }
+]
