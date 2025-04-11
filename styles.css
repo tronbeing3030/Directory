@@ -48,10 +48,21 @@ img{
     background-color: light-dark(black, white);
     color: white;
     border-radius: 1em;
-    padding: 0 1em;
+    padding: 0 1em 1em 1em;
     display: flex;
     flex-direction: column;
+    justify-content: end;
     box-shadow: inset 0 0 20rem 20px rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.inner:hover{
+    opacity: .6;
+}
+
+.sub{
+    display: flex;
+    justify-content: space-between;
 }
 
 .inner h1, .inner p{
