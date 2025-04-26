@@ -1,56 +1,105 @@
-console.log("Works!");
-
-const imgs = document.querySelector('.imgs');
+const buzzes = document.querySelector('.buzzes');
 const company = document.querySelector('main');
+const searchBar = document.querySelector('input');
+const categories = document.querySelector('#Kinds');
 
 let a = [];
 
-fetch('./small_business_directory.json') 
+
+fetch('./data.json') 
   .then(response => response.json())
   .then(data => {
+
+    a = data.map(info => info);
+    compItem();
     
-    for(i = 0; i<10; i++){
-        const comps = document.createElement('div');
-        const title = document.createElement('h1');
-        const ratings = document.createElement('p');
-        const description = document.createElement('p');
-        const category = document.createElement('p');
-        const subtitle = document.createElement('div');
-        title.innerHTML = data[i].name;
-        ratings.innerHTML = 'Rating: ' +data[i].rating;
-        description.innerHTML = data[i].description;
-        category.innerHTML = data[i].category;
-        ratings.setAttribute("class", "ratings");
-        subtitle.setAttribute("class", "sub");
-        subtitle.appendChild(category);
-        subtitle.appendChild(ratings);
-        comps.setAttribute("class", "inner");
-        comps.appendChild(title);
-        comps.appendChild(subtitle);
-        comps.appendChild(description);
-        imgs.appendChild(comps);
-        comps.style.backgroundImage = `url(${data[i].contact.image_url})`;
-        comps.addEventListener('click', (i) => {
-          console.log(i);
-          const contact = document.createElement('p');
-          contact.innerHTML = data[i].contact.email;
-          comps.appendChild(contact);
-        });
-  }
   })
   .catch(error => {
     console.error('Error loading JSON:', error);
   });
 
+
+
+const compItem = () => {
+    a.forEach(item => {
+        const buzz = document.createElement('div');
+        const title = document.createElement('h1');
+        const ratings = document.createElement('p');
+        const description = document.createElement('p');
+        const category = document.createElement('p');
+
+        title.innerHTML = item.name;
+        ratings.innerHTML = '★ ' + item.rating;
+        description.innerHTML = item.description;
+        category.innerHTML = item.category;
+
+        category.setAttribute("class", "category");
+        ratings.setAttribute("class", "ratings");
+
+        buzz.setAttribute("class", "inner");
+        buzz.append(ratings, title, category, description);
+        buzzes.appendChild(buzz);
+
+        buzz.style.backgroundImage = `url(${item.contact.image_url})`;
+
+        buzz.onclick = () => showPopup(item);
+
+    });
+}
+
+// Show the pop-up
+function showPopup(item) {
+  const pop = document.createElement('div');
+  const popcont = document.createElement('div');
+  const close = document.createElement('span');
+  const content = document.createElement('span');
+  const heading = document.createElement('span');
+  const titles = document.createElement('span');
+  const title = document.createElement('h1');
+  const ratings = document.createElement('p');
+  const description = document.createElement('p');
+  const image = document.createElement('img');
+  const email = document.createElement('p');
+  const phone = document.createElement('p');
+  const location = document.createElement('p');
+
+  pop.setAttribute("class", "popup");
+  popcont.setAttribute("class", "popup-content");
+  heading.setAttribute("class", "heading");
+  titles.setAttribute("class", "titles");
+  close.setAttribute("class", "popup-close");
+  location.setAttribute("class", "location");
+  ratings.setAttribute("class", "ratings");
+  description.setAttribute("class", "description");
+
+  close.innerHTML = "&#10005;";
+  // console.log(item);  
+  title.innerHTML = item.name;
+  ratings.innerHTML = '★ ' + item.rating;
+  description.innerHTML = item.description;
+  // category.innerHTML = item.category + ', ' + item.location;
+  email.innerHTML = '&#9993; ' + item.contact.email;
+  phone.innerHTML = '&phone; ' + item.contact.phone;
+  location.innerHTML = item.location;
+  image.src =  item.contact.image_url;
+
+  content.append(ratings, description, email, phone);
+  titles.append(title, location);
+  heading.append(close, titles);
+  popcont.append(heading, image, content);
+  pop.appendChild(popcont);
+
+  pop.style.display = "block";
+
+  company.appendChild(pop);
   
+  // console.log(pop.style.display);
 
-//   document.addEventListener('DOMContentLoaded', () => {
-//     const parentElement = document.getElementById('parent');
-//     const childElement = document.createElement('div');
-//     childElement.textContent = 'I am a child element!';
-//     parentElement.appendChild(childElement);
-//   });
+  close.onclick = () => {
+    const pop = document.querySelector(".popup");
+    // console.log(pop.style.display);
+    company.removeChild(pop);
+    // console.log(pop.style.display);
 
-
-
-
+  }
+}
