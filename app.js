@@ -25,17 +25,29 @@ const compItem = () => {
         const buzz = document.createElement('div');
         const title = document.createElement('h1');
         const ratings = document.createElement('p');
+<<<<<<< HEAD
+=======
+        const description = document.createElement('p');
+>>>>>>> 6b43fa0d67ec860ed3a0aebd177a2a5c7d41188e
         const category = document.createElement('p');
 
         title.innerHTML = item.name;
         ratings.innerHTML = '★ ' + item.rating;
+<<<<<<< HEAD
+=======
+        description.innerHTML = item.description;
+>>>>>>> 6b43fa0d67ec860ed3a0aebd177a2a5c7d41188e
         category.innerHTML = item.category;
 
         category.setAttribute("class", "category");
         ratings.setAttribute("class", "ratings");
 
         buzz.setAttribute("class", "inner");
+<<<<<<< HEAD
         buzz.append(ratings, title, category);
+=======
+        buzz.append(ratings, title, category, description);
+>>>>>>> 6b43fa0d67ec860ed3a0aebd177a2a5c7d41188e
         buzzes.appendChild(buzz);
 
         buzz.style.backgroundImage = `url(${item.contact.image_url})`;
@@ -56,7 +68,11 @@ function showPopup(item) {
   const title = document.createElement('h1');
   const ratings = document.createElement('p');
   const description = document.createElement('p');
+<<<<<<< HEAD
   const image = document.createElement('div');
+=======
+  const image = document.createElement('img');
+>>>>>>> 6b43fa0d67ec860ed3a0aebd177a2a5c7d41188e
   const email = document.createElement('p');
   const phone = document.createElement('p');
   const location = document.createElement('p');
@@ -69,7 +85,10 @@ function showPopup(item) {
   location.setAttribute("class", "location");
   ratings.setAttribute("class", "ratings");
   description.setAttribute("class", "description");
+<<<<<<< HEAD
   image.setAttribute("class", "image");
+=======
+>>>>>>> 6b43fa0d67ec860ed3a0aebd177a2a5c7d41188e
 
   close.innerHTML = "&#10005;";
   // console.log(item);  
@@ -80,7 +99,11 @@ function showPopup(item) {
   email.innerHTML = '&#9993; ' + item.contact.email;
   phone.innerHTML = '&phone; ' + item.contact.phone;
   location.innerHTML = item.location;
+<<<<<<< HEAD
   image.style.backgroundImage = `url(${item.contact.image_url})`;
+=======
+  image.src =  item.contact.image_url;
+>>>>>>> 6b43fa0d67ec860ed3a0aebd177a2a5c7d41188e
 
   content.append(ratings, description, email, phone);
   titles.append(title, location);
