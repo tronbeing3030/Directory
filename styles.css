@@ -1,10 +1,11 @@
-:root {
+/* :root {
 	color-scheme: light dark;
-}
+} */
 
 * {
 	font-family: "Poppins", sans-serif;
 	transition: all 0.1s ease-in-out;
+	color: #ffffff;
 }
 
 html {
@@ -20,10 +21,12 @@ header {
 	align-items: center;
 	margin: 0;
 	width: 100%;
+	background-color: #171717;
 }
 
 header {
-	background: url("HeaderBG.png") no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+		url("BuzzesBuilding.webp") no-repeat;
 	background-size: cover;
 	background-position: center center;
 	width: 100%;
@@ -43,7 +46,8 @@ nav {
 }
 
 nav p {
-	margin: 0 0.5em;
+	margin: 0;
+	padding: 0 1em;
 	font-size: 1.5rem;
 	text-transform: uppercase;
 }
@@ -56,8 +60,12 @@ nav p:hover {
 	cursor: pointer;
 }
 
+nav p:last-of-type:hover {
+	text-decoration: underline;
+}
+
 header .title {
-	margin: 0 0 2.2em 0.7em;
+	margin: 0 0 3.2em 0;
 }
 
 header .title a {
@@ -66,6 +74,7 @@ header .title a {
 	align-items: end;
 	text-decoration: none;
 	margin: 0 0 1em 0;
+	padding: 0 1.3em;
 	color: #fff;
 }
 
@@ -82,7 +91,7 @@ header .title a p {
 	max-width: 0%;
 	white-space: nowrap;
 	overflow: hidden;
-	transition: max-width 0.3s linear;
+	transition: max-width 0.8s linear;
 }
 
 header .title a img:hover {
@@ -97,17 +106,19 @@ header .title a img:hover + p {
 
 header .title h1 {
 	font-weight: 300;
-	font-size: 4.5rem;
+	font-size: 5.5rem;
 	line-height: 0.75em;
 	overflow: hidden;
 	text-wrap: wrap;
 	word-break: break-word;
 	margin: 0;
+	padding: 0 0.25em;
 }
 
 input {
 	font-size: 1.2rem;
 	padding: 0.3em 0.75em;
+	margin: 0 1em 0.5em 1em;
 	border: 1.6px solid rgb(45, 45, 45);
 	border-radius: 0.3em;
 	width: 100%;
@@ -121,7 +132,7 @@ input {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-start;
-	width: 95%;
+	width: 100%;
 	margin: 1em 0 0 0;
 }
 
@@ -154,6 +165,7 @@ input {
 }
 
 .select {
+	margin: 0 1.15em;
 	border-radius: 0.5em;
 	display: inline;
 }
@@ -272,13 +284,33 @@ option::checkmark {
 	justify-content: end;
 	margin: 0em;
 	padding: 0 1em 1.2em 1.5em;
-	box-shadow: inset 0 0 20em 2em #000000;
+	box-shadow: inset 20px -20px 20em 1em #000000d1;
 	background-size: cover;
 	background-position: center;
 	color: #ffffff;
 	border-top: 0.2em solid #1b1b1b;
 	overflow: hidden;
 	position: relative;
+	z-index: 1;
+}
+
+.inner::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background-color: #be4200b5;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s ease-in-out;
+}
+
+.inner:hover::before,
+.inner:focus::before {
+	transform: scaleX(1);
 }
 
 .inner:first-of-type {
@@ -292,7 +324,9 @@ option::checkmark {
 
 .inner:hover {
 	cursor: pointer;
-	opacity: 0.5;
+	opacity: 0.8;
+	filter: brightness(1.5);
+	transition: all 0.2s ease-in-out;
 }
 
 .inner h1 {
@@ -321,12 +355,13 @@ option::checkmark {
 .inner .ratings {
 	position: absolute;
 	top: 1.5em;
-	margin-bottom: 0.6em;
+	margin: 0 0 0.6em 0;
 }
 
 .popup {
-	display: block; /* Hidden by default */
+	display: flex; /* Hidden by default */
 	position: fixed;
+	justify-content: center;
 	align-items: center;
 	top: 0;
 	left: 0;
@@ -337,13 +372,26 @@ option::checkmark {
 }
 
 .popup span {
-	margin: 0.3em 1em 0.5em 1em;
+	background: linear-gradient(
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.6),
+		rgba(0, 0, 0, 0.8),
+		rgba(0, 0, 0, 1)
+	);
+	padding: 0.8em 1em;
 }
 
 .popup-content .heading {
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.8),
+		rgba(0, 0, 0, 0.6),
+		rgba(0, 0, 0, 0.4),
+		rgba(0, 0, 0, 0)
+	);
 	margin: 0;
 	display: flex;
-	padding: 1em 0.8em 0.8em 1em;
+	padding: 0.8em 1em;
 	align-items: center;
 	justify-content: flex-start;
 }
@@ -353,32 +401,32 @@ option::checkmark {
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: space-between;
-	background: black;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 	color: #ededed;
 	padding: 0;
-	margin: 12em auto auto auto;
-	width: 40%;
-	min-width: 20em;
-	height: auto;
-	min-height: 200px;
+	min-width: 70%;
+	min-height: 70%;
 	border-radius: 1em;
 	text-align: left;
 	overflow: hidden;
 	box-shadow: 0 0 5em 0 #6e6e6e34;
 	z-index: 99;
+	backdrop-filter: blur(15px) saturate(3);
 }
 
 .popup-content p {
 	margin: 0.3em 0;
-	font-size: 1rem;
-	line-height: 1em;
+	font-size: 1.5rem;
+	line-height: 1.05em;
 	flex-wrap: wrap;
 }
 
 .popup-content h1 {
 	text-transform: uppercase;
 	line-height: 0.75em;
-	font-size: 1.3rem;
+	font-size: 3rem;
 	font-weight: 600;
 	margin: 0.2em 0 0 0;
 	text-wrap: wrap;
@@ -393,15 +441,16 @@ option::checkmark {
 }
 
 .popup-content .popup-close {
-	font-size: 1.1rem;
+	background: none;
+	font-size: 1.5rem;
 	font-weight: 600;
 	margin: 0;
 	color: #e4e4e4;
 	padding: 0.5em;
 	border: 0.1em solid #e4e4e4;
 	border-radius: 30em;
-	width: 15px;
-	height: 15px;
+	width: 32px;
+	height: 32px;
 	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
@@ -413,7 +462,6 @@ option::checkmark {
 .popup-close:hover {
 	background-color: #e4e4e4;
 	color: #171717;
-	border: 0.1em solid #141414;
 	box-shadow: 0 0 1em 0 #6d6d6d;
 	cursor: pointer;
 }
@@ -423,10 +471,11 @@ option::checkmark {
 	flex-wrap: wrap;
 	align-items: center;
 	margin: 0;
-	color: #e4e4e4;
+	color: #ffffffc4;
 }
 
 .popup-content .ratings {
+	font-size: 1.3rem;
 	color: #e4e4e4;
 }
 
@@ -435,8 +484,14 @@ option::checkmark {
 	color: #e4e4e4;
 }
 
+.popup-content .contact {
+	font-size: 1.1rem;
+}
+
 .popup-content .titles {
-	margin: 0 0 0 1em;
+	background: none;
+	padding: 0.3em 0.6em;
+	margin: 0;
 }
 
 footer {

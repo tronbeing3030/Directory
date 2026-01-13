@@ -56,7 +56,6 @@ function showPopup(item) {
   const title = document.createElement('h1');
   const ratings = document.createElement('p');
   const description = document.createElement('p');
-  const image = document.createElement('div');
   const email = document.createElement('p');
   const phone = document.createElement('p');
   const location = document.createElement('p');
@@ -69,26 +68,31 @@ function showPopup(item) {
   location.setAttribute("class", "location");
   ratings.setAttribute("class", "ratings");
   description.setAttribute("class", "description");
-  image.setAttribute("class", "image");
+  email.setAttribute("class", "contact");
+  phone.setAttribute("class", "contact");
 
   close.innerHTML = "&#10005;";
+  // console.log(item);  
   title.innerHTML = item.name;
   ratings.innerHTML = '★ ' + item.rating;
   description.innerHTML = item.description;
+  // category.innerHTML = item.category + ', ' + item.location;
   email.innerHTML = '&#9993; ' + item.contact.email;
   phone.innerHTML = '&phone; ' + item.contact.phone;
   location.innerHTML = item.location;
-  image.style.backgroundImage = `url(${item.contact.image_url})`;
+  popcont.style.backgroundImage = `url(${item.contact.image_url})`;
 
   content.append(ratings, description, email, phone);
   titles.append(title, location);
   heading.append(close, titles);
-  popcont.append(heading, image, content);
+  popcont.append(heading, content);
   pop.appendChild(popcont);
 
-  pop.style.display = "block";
+  pop.style.display = "flex";
 
   company.appendChild(pop);
+  
+  // console.log(pop.style.display);
 
   close.onclick = () => {
     const pop = document.querySelector(".popup");
